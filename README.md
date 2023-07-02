@@ -2,8 +2,6 @@
 
 TIG Monitoring
 
-## ⚡️ Getting Started
-
 Clone the project
 
 ```bash
@@ -30,6 +28,3 @@ docker-compose up -d
 
 ![Alt text](monitoring.png)
 
-## Contributing
-
-Contributions are always welcome!
