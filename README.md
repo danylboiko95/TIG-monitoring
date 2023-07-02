@@ -26,9 +26,9 @@ docker-compose up -d
 
 [**Grafana-OSS**](https://hub.docker.com/r/grafana/grafana-oss) / `8.4.3`
 
-![Alt text](monitoring.png)
-
 # SCRIPT TO LOAD
 ```bash
  siege -c 50 -r 100 -t 10s http://localhost
 ```
+![Alt text](monitoring.png)
+
