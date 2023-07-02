@@ -28,3 +28,7 @@ docker-compose up -d
 
 ![Alt text](monitoring.png)
 
+# SCRIPT TO LOAD
+```bash
+ siege -c 50 -r 100 -t 10s http://localhost
+```
