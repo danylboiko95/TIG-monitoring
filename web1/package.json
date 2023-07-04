@@ -1,15 +1,17 @@
 {
-"name": "web",
-"version": "1.0.0",
-"description": "Running Node.js and Express.js on Docker",
-"main": "server.js",
-"scripts": {
-  "start": "node server.js"
-},
-"dependencies": {
-  "express": "^4.17.2",
-  "redis": "3.1.2"
-},
-"author": "",
-"license": "MIT"
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Running Node.js and Express.js on Docker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.1",
+    "redis": "3.1.2"
+  },
+  "author": "",
+  "license": "MIT"
 }

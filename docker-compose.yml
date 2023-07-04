@@ -7,14 +7,49 @@ services:
       - "6379:6379"
   web1:
     restart: on-failure
-    build: ./web1
+    links:
+      - my_service_db
+    environment:
+      - dev=1
+      - db_service_name=my_service_db
+      - db_name=example_db
+      - db_retry_time=3000
+    build:
+      context: ./web1
+      dockerfile: Dockerfile
     ports:
       - "81:5000"
+
+    depends_on:
+      - redis
+      - my_service_db
+
   web2:
     restart: on-failure
-    build: ./web2
+    links:
+      - my_service_db
+    environment:
+      - dev=1
+      - db_service_name=my_service_db
+      - db_name=example_db
+      - db_retry_time=3000
+    build:
+      context: ./web2
+      dockerfile: Dockerfile
     ports:
       - "82:5000"
+    depends_on:
+      - redis
+      - my_service_db
+
+  my_service_db:
+    container_name: my_service_db
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    ports:
+      - "27017:27017"
+
   nginx:
     build: ./nginx
     ports:
@@ -57,3 +92,4 @@ services:
 volumes:
   grafana-storage:
   influxdb-storage:
+  mongo_data:
